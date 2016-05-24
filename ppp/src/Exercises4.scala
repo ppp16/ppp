@@ -6,10 +6,6 @@ import com.cra.figaro.language._
 import com.cra.figaro.algorithm.factored.VariableElimination
 object Exercises4 {
   def main(args: Array[String]) {
-    //val cards = List(5, 4, 3, 2, 1)
-
-    //val firstPlayerCard = discrete.Uniform(cards:_*)
-
     /*
  * Exercise 4.2
 In the same poker game, you observe evidence that one player has a picture
@@ -148,7 +144,7 @@ way that it would change your decision.
 
     val queen = Flip(Beta(1,20))
     val firstPlayerCard2 = If(queen,"Queen of Hearts",discrete.Uniform(cards3: _*))
-    print(VariableElimination.probability(firstPlayerCard2, "King of Spades"))
+    print(VariableElimination.probability(firstPlayerCard2, "Queen of Hearts"))
 
   }
 }
