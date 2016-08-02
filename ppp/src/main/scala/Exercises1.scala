@@ -19,14 +19,14 @@ object Exercises1 {
    * Rules of Poker - Which combinations are there, which beats which, whats the gameflow
    * Knowledge of Playing pattern - How do people play in general
    *
-   * b) Describe how you might use the system to predict the future. What’s the evidence?
-   * What’s the query?
+   * b) Describe how you might use the system to predict the future. Whats the evidence?
+   * Whats the query?
    * You could for example calculate how you have to bluff to make enemies fold, or how much the opponent will most probably bet.
    * The Queries would be how high i have to bluff or what will he bet.
    * The Evidence would be the cards on the table, the cards gone/folded,the bets, your hand and everything you know about the other player.
    *
    * c) Describe how you might use the system to infer past causes of current observations.
-   * What’s the evidence? What’s the query?
+   * Whats the evidence? Whats the query?
    * You can infer what cards an opponent might have based on observations.
    * The Query would be which cards the opponent has/had.
    * The Evidence would be the cards on the table, the cards gone/folded,the bets, your hand and everything you know about the other player.
@@ -35,13 +35,13 @@ object Exercises1 {
    * If you know his cards through your inferences you can predict all of his upcoming bets and can get the most out of the round.
    
    * Excercise 1.2
-   * In the Hello World example, change the probability that today’s weather is sunny
+   * In the Hello World example, change the probability that todays weather is sunny
 	 * according to the following table. How do the outputs of the program change?
    * Why do you think they change this way?
    * 
    * The Outcomes of sunnyToday = 0.2[0.1] are
-   * Today’s greeting is "Hello, world!" with probability 0.28[0.24].
-	 * If today's greeting is "Hello, world!", today’s weather is sunny with probability 0.43[0.25].
+   * Todays greeting is "Hello, world!" with probability 0.28[0.24].
+	 * If today's greeting is "Hello, world!", todays weather is sunny with probability 0.43[0.25].
 	 * If today's greeting is "Hello, world!", tomorrow's greeting will be "Hello, world!" with probability 0.35[0.295].
    * 
    * Today greeting "Hellow World!": sunnyToday*0.6+(1-sunnyToday)*0.2=0.06+0.18=0.24
@@ -57,11 +57,11 @@ object Exercises1 {
    * 		as drastically as above.
    * 
    * Exercise 1.3
-   * Modify the Hello World example to add a new greeting: “Hi, galaxy!” Give this
+   * Modify the Hello World example to add a new greeting: Hi, galaxy! Give this
 	 * greeting some probability when the weather is sunny, making sure to reduce
    * the probability of the other greetings so the total probability is 1. Also, modify the
-   * program so that all the queries print the probability of “Hi, galaxy!” instead of
-   * “Hello, world!” Try to do this for both the Java and Figaro versions of the Hello
+   * program so that all the queries print the probability of Hi, galaxy! instead of
+   * Hello, world! Try to do this for both the Java and Figaro versions of the Hello
    * World program. Compare the process for the two languages.
    * 
    * The output of both changed codes are:
@@ -75,7 +75,7 @@ If today's greeting is Hi, Galaxy!, tomorrow's greeting will be Hi, Galaxy! with
    * 
   	Changing twice
     		Select(0.6 -> "Hello, world!", 0.4 -> "Howdy, universe!"),
-==>    	Select(0.3 -> "Hello, world!",0.5 -> "Hi, Galaxy!", 0.2 -> "Howdy, universe!"),
+==>    	Select(0.3 -> "Hello, world!",0.5 -> "Hi, Galaxy!", 0.2 -> "Howdy, universe!"),ï¿½
 
     and in the Methods predict(),infer() and learnAndPredict() exchange every instance of
     		Hello, world!
@@ -115,14 +115,14 @@ If today's greeting is Hi, Galaxy!, tomorrow's greeting will be Hi, Galaxy! with
   def predict() {
     val result = VariableElimination.probability(greetingToday,
       "Hi, Galaxy!")
-    println("Today’s greeting is \"Hi, Galaxy!\" " +
+    println("Todays greeting is \"Hi, Galaxy!\" " +
       "with probability " + result + ".")
   }
   
   def infer() {
     greetingToday.observe("Hi, Galaxy!")
     val result = VariableElimination.probability(sunnyToday, true)
-    println("If today's greeting is \"Hi, Galaxy!\", today’s " +
+    println("If today's greeting is \"Hi, Galaxy!\", todays " +
       "weather is sunny with probability " + result + ".")
   }
   

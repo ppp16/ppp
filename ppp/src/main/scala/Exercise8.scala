@@ -17,8 +17,8 @@ object Exercise8 {
 One in a thousand cars produced by the factory that made your car is faulty. On
 any given day, the fuel efficiency of a car is either high or low, and follows the
 following distribution: If the previous day had low fuel efficiency, then the current
-day’s fuel efficiency is low with probability 90%. If the previous day had
-high fuel efficiency, then the current day’s fuel efficiency is low with probability
+days fuel efficiency is low with probability 90%. If the previous day had
+high fuel efficiency, then the current days fuel efficiency is low with probability
 90% for faulty cars and 5% for normal cars. Your car also has a fuel-economy
 gauge that shows whether your car has high or low fuel efficiency that day. The
 gauge shows the correct value with probability 0.95 and the incorrect value with
@@ -151,7 +151,7 @@ normal car and one for a faulty car.
       
  /* 
  d Use particle filtering to monitor the state of this system. Run the particle filter
-on your two observation sequences. Use 100 samples. You’ll probably find
+on your two observation sequences. Use 100 samples. Youï¿½ll probably find
 that most of the time, you cannot detect a faulty car. Why do you think this is?
   */   
       println("------------------------------------------------------------")
@@ -186,7 +186,7 @@ that most of the time, you cannot detect a faulty car. Why do you think this is?
 /*
  e Now repeat part (d) with 10,000 samples. You should usually get a different
 result. Can you explain why? (Make sure to run the experiment multiple
-times—particle filtering will not always produce the same answer.)
+timesï¿½particle filtering will not always produce the same answer.)
  */
       
       println("------------------------------------------------------------")
@@ -220,8 +220,8 @@ times—particle filtering will not always produce the same answer.)
       }       
       
       /*
-Now let’s change the model of the previous exercise slightly, in an attempt to
-make particle filtering run more smoothly. A faulty car doesn’t always stay
+Now letï¿½s change the model of the previous exercise slightly, in an attempt to
+make particle filtering run more smoothly. A faulty car doesnï¿½t always stay
 faulty; it has some probability to correct itself at each time step. Likewise, a normal
 car could become faulty. Specifically, a car maintains the same faulty state
 from one time step to the next with probability 0.99, and flips state with probability

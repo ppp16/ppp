@@ -8,37 +8,37 @@ object Exercises2 {
    * Exercise 2.1
    * Extend the Hello World program to add a variable representing the side of bed
 	 * you got out of (right or wrong). If you got out of the wrong side of the bed, the
-   * greeting is always “Oh no, not again!” If you got out of the right side of the bed,
+   * greeting is always Oh no, not again! If you got out of the right side of the bed,
    * the greeting logic is the same as before.
    * 
    * Output before the change:
 
-Today’s greeting is "Hello, world!" with probability 0.27999999999999997.
-If today's greeting is "Hello, world!", today’s weather is sunny with probability 0.4285714285714285.
+Todays greeting is "Hello, world!" with probability 0.27999999999999997.
+If today's greeting is "Hello, world!", todays weather is sunny with probability 0.4285714285714285.
 If today's greeting is "Hello, world!", tomorrow's greeting will be "Hello, world!" with probability 0.3485714285714286.
 	 
 	 * Output after the change: 
 
-Today’s greeting is "Hello, world!" with probability 0.13999999999999999.
-If today's greeting is "Hello, world!", today’s weather is sunny with probability 0.4285714285714285.
+Todays greeting is "Hello, world!" with probability 0.13999999999999999.
+If today's greeting is "Hello, world!", todays weather is sunny with probability 0.4285714285714285.
 If today's greeting is "Hello, world!", tomorrow's greeting will be "Hello, world!" with probability 0.1742857142857143.
 
    * as expected the chances for the greetings halve if half of the time you stand up on the wrong side of the bed
    * and the second test didnt change cause this is not effected
    * 
    * Exercise 2.2
-   * In the original Hello World program, observe that today’s greeting is “Oh no,
-	 * not again!” and query today’s weather. Now observe the same evidence and ask
+   * In the original Hello World program, observe that todays greeting is Oh no,
+	 * not again! and query todays weather. Now observe the same evidence and ask
  	 * the same query on your modified program from exercise 1. What happened to
 	 * the answer to the query? Can you explain the result intuitively?
    * 
    * Output before the change:
    * 
-If today's greeting is "Oh no, not again!", today’s weather is sunny with probability 0.0.
+If today's greeting is "Oh no, not again!", todays weather is sunny with probability 0.0.
 
    * Output after the change:
 
-If today's greeting is "Oh no, not again!", today’s weather is sunny with probability 0.12195121951219512.
+If today's greeting is "Oh no, not again!", todays weather is sunny with probability 0.12195121951219512.
 
 	 *
 	 * In the normal version you can only get the answer "Oh no, not again!" on rainy days so it is
@@ -94,14 +94,14 @@ If today's greeting is "Oh no, not again!", today’s weather is sunny with probab
   
   def predict() {
     val result = VariableElimination.probability(greetingToday,"Hello, world!")
-    println("Today’s greeting is \"Hello, world!\" " +
+    println("Todays greeting is \"Hello, world!\" " +
       "with probability " + result + ".")
   }
   
   def infer() {
     greetingToday.observe("Oh no, not again!")
     val result = VariableElimination.probability(sunnyToday, true)
-    println("If today's greeting is \"Oh no, not again!\", today’s " +
+    println("If today's greeting is \"Oh no, not again!\", todays " +
       "weather is sunny with probability " + result + ".")
   }
   
@@ -117,14 +117,14 @@ If today's greeting is "Oh no, not again!", today’s weather is sunny with probab
   // for exercise 2.1
 //  def predict() {
 //    val result = VariableElimination.probability(greetingToday,"Hello, world!")
-//    println("Today’s greeting is \"Hello, world!\" " +
+//    println("Todays greeting is \"Hello, world!\" " +
 //      "with probability " + result + ".")
 //  }
 //  
 //  def infer() {
 //    greetingToday.observe("Hello, world!")
 //    val result = VariableElimination.probability(sunnyToday, true)
-//    println("If today's greeting is \"Hello, world!\", today’s " +
+//    println("If today's greeting is \"Hello, world!\", todays " +
 //      "weather is sunny with probability " + result + ".")
 //  }
 //  

@@ -9,31 +9,33 @@ object Exercises4 {
     /*
  * Exercise 4.2
 In the same poker game, you observe evidence that one player has a picture
-card (king or queen). What’s the probability that the other player has a spade?
+card (king or queen). Whats the probability that the other player has a spade?
  */
 
     val cards = List("Ace of Spades", "King of Spades", "King of Hearts", "Queen of Spades", "Queen of Hearts")
     val cards2 = List("King of Spades", "King of Hearts", "Queen of Spades", "Queen of Hearts")
-
+print(cards)
     val firstPlayerCard = discrete.Uniform(cards2: _*)
     val secondPlayerCard = Chain(firstPlayerCard, (card: String) => discrete.Uniform(cards.filter(_ != card): _*))
     val secondPlayerSpades = VariableElimination.probability(secondPlayerCard, "Ace of Spades") +
       VariableElimination.probability(secondPlayerCard, "King of Spades") +
       VariableElimination.probability(secondPlayerCard, "Queen of Spades")
 
+      println(firstPlayerCard)
+      println("test")
     println(secondPlayerSpades) // result 0.625 --> 10/16
 
     /*
  * Exercise 4.3
-Let’s elaborate on the rules of this poker game. The game includes betting.
+Lets elaborate on the rules of this poker game. The game includes betting.
 Here are the betting rules:
 Player 1 can bet or pass.
 If player 1 bets:
-– Player 2 can bet or fold.
+ Player 2 can bet or fold.
 If player 1 passes:
-– Player 2 can bet or pass.
+ Player 2 can bet or pass.
 If player 2 bets:
-– Player 1 can bet or fold.
+ Player 1 can bet or fold.
 The possible betting outcomes are (1) both players bet; (2) both players pass; (3)
 one bets and one passes. If both pass, neither player wins or loses anything. If one
 bets and one folds, the player that bets wins $1. If both bet, the player with the
@@ -109,8 +111,8 @@ We know the cards and their distribution but we have to guess the betting behavi
 Write a Figaro program to represent the probabilistic model for this game.
 Assume certain values for the parameters that need to be estimated. Use the
 program to make the following decisions:
-a You’re player 1 and were dealt the king of spades. Should you bet or pass?
-b You’re player 2 and were dealt the king of hearts, and your opponent bets.
+a Youre player 1 and were dealt the king of spades. Should you bet or pass?
+b Youre player 2 and were dealt the king of hearts, and your opponent bets.
 Should you bet or fold?
 c Now, see if you can change the values of the estimated parameters in such a
 way that it would change your decision.
